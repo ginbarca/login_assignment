@@ -1,5 +1,9 @@
 <div class="container">
-	<div (afterLogin)="showUsername($event)">
+	<div *ngIf="user !== undefined || user?.username.length == 0">
+		<h1>Welcom</h1>
+		<h3>{{ user.username }}</h3>
 	</div>
-	<h1>{{ user.username }} </h1>
+	<div *ngIf="user === undefined">
+		<h1>Please login</h1>
+	</div>
 </div>
