@@ -13,12 +13,12 @@ export class MainComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    // this.user = window.history.state.data;
-    // console.log(this.user);
+    this.user = window.history.state.data;
+    console.log(this.user);
   }
 
-  showUsername(user: Login) {
-    console.log(user);
-    this.user = user;
-  }
+  //   showUsername(user: Login) {
+  //     console.log(user);
+  //     this.user = user;
+  //   }
 }
