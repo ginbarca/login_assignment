@@ -12,15 +12,18 @@ export class LoginComponent implements OnInit {
   @Input() password: string = "";
   @Output() afterLogin = new EventEmitter<Login>();
 
+  
   user = new Login();
   constructor(private router: Router) {}
 
   ngOnInit() {}
 
   onLogin() {
+	  console.log();
     this.user.username = this.username;
     this.user.password = this.password;
-	this.afterLogin.emit(this.user);
-    // this.router.navigate(["/main"], {});
+    this.afterLogin.emit(this.user);
+    // this.router.navigate(["main"]).then(() => {
+    // });
   }
 }

@@ -18,6 +18,7 @@ export class MainComponent implements OnInit {
   }
 
   showUsername(user: Login) {
+    console.log(user);
     this.user = user;
   }
 }
