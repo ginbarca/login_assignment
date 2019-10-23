@@ -4,18 +4,31 @@
 		<div id="login-row" class="row justify-content-center align-items-center">
 			<div id="login-column" class="col-md-6">
 				<div id="login-box" class="col-md-12">
-					<form id="login-form" class="form" action="/main">
+					<form id="login-form" class="form" (ngSubmit)="onLogin()" #loginForm="ngForm">
 						<h3 class="text-center text-info">Login</h3>
 						<div class="form-group">
 							<label for="username" class="text-info">Username:</label><br>
-							<input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username">
+							<input type="text" [(ngModel)]="username" name="username" #name="ngModel" class="form-control" placeholder="Username" required />
+							<div [hidden]="name.valid || name.pristine || !name.touched" class="alert alert-danger">
+								<div *ngIf="name.errors?.required">
+									Name is required.
+								</div>
+							</div>
 						</div>
 						<div class="form-group">
 							<label for="password" class="text-info">Password:</label><br>
-							<input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
+							<input type="password" [(ngModel)]="password" name="password" #pass="ngModel" class="form-control" placeholder="Password" required minlength="6" />
+							<div [hidden]="pass.valid || pass.pristine" class="alert alert-danger">
+								<div *ngIf="pass.errors?.required">
+									Password is required
+								</div>
+								<div *ngIf="pass.errors?.minlength">
+									Password must be at least 6 characters long.
+								</div>
+							</div>
 						</div>
 						<div class="form-group">
-							<input type="submit" name="submit" class="btn btn-info btn-md" value="Login" (click)="onLogin()">
+							<input type="submit" name="submit" class="btn btn-info btn-md" value="Login">
 						</div>
 					</form>
 				</div>
