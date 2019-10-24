@@ -3,22 +3,22 @@ import { Router } from "@angular/router";
 import { Login } from "../login/login.model";
 
 @Component({
-  selector: "app-main",
-  templateUrl: "./main.component.html",
-  styleUrls: ["./main.component.css"]
+	selector: "app-main",
+	templateUrl: "./main.component.html",
+	styleUrls: ["./main.component.css"]
 })
 export class MainComponent implements OnInit {
-  user = new Login();
+	user = new Login();
 
-  constructor() {}
+	constructor() { }
 
-  ngOnInit() {
-    this.user = window.history.state.data;
-    console.log(this.user);
-  }
+	ngOnInit() {
+		this.user = window.history.state.data;
+		console.log(this.user);
+	}
 
-  //   showUsername(user: Login) {
-  //     console.log(user);
-  //     this.user = user;
-  //   }
+	//   showUsername(user: Login) {
+	//     console.log(user);
+	//     this.user = user;
+	//   }
 }

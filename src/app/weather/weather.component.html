@@ -1,0 +1,9 @@
+<h1>{{ cityName.value }} is now {{ temp }}</h1>
+
+<div class="form-group">
+	<label for="">City name</label>
+	<input type="text" #cityName class="form-control" name="cityName" id="cityName" placeholder="Enter city name" />
+</div>
+<div class="form-group">
+	<button type="button" class="btn btn-primary" (click)="getTemp(cityName.value)">Get weather</button>
+</div>

@@ -8,12 +8,16 @@ import { MainComponent } from "./main/main.component";
 
 import { FormsModule } from "@angular/forms";
 
-import {} from '@angular/router'
+import {} from '@angular/router';
+import { WeatherComponent } from './weather/weather.component'
+import { WeatherService } from './weather/weather.service';
+
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, MainComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  declarations: [AppComponent, LoginComponent, MainComponent, WeatherComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
