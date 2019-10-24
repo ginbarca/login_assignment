@@ -2,6 +2,7 @@
 	<div *ngIf="user !== undefined || user?.username.length == 0">
 		<h1>Welcom</h1>
 		<h3>{{ user.username }}</h3>
+		<app-weather></app-weather>
 	</div>
 	<div *ngIf="user === undefined">
 		<h1>Please login</h1>
